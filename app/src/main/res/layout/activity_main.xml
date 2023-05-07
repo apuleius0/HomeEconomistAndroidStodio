@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:text="Доход:  "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/colorText"/>
+
+        <EditText
+            android:id="@+id/incomeInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Введите доход"
+            android:labelFor="@+id/incomeInput"
+            android:minHeight="48dp"
+            android:minWidth="48dp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:text="Статья: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/colorText"/>
+
+        <EditText
+            android:id="@+id/expenseNameInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:hint="Введите наименование" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:text="Расход: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/colorText"/>
+
+        <EditText
+            android:id="@+id/expenseInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="Введите расход"
+            android:minHeight="48dp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/balance_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Баланс: 0"
+        android:textSize="18sp"
+        android:textColor="@color/colorText"
+        android:backgroundTint="@color/colorAccent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"/>
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:layout_marginTop="16dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark">
+
+            <TextView
+                android:text="Дата"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:textColor="@android:color/white"/>
+            <TextView
+                android:text="Доход"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:text="Статья расхода"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:textColor="@android:color/white"/>
+
+            <TextView
+                android:text="Расход"
+                android:textSize="18sp"
+                android:padding="8dp"
+                android:textColor="@android:color/white"/>
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"/>
+
+        </TableRow>
+
+        <Button
+            android:id="@+id/show_table_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Показать таблицу"
+            android:textSize="18sp"
+            android:textColor="@color/colorText"
+            android:backgroundTint="@color/colorAccent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="215dp"
+            android:minHeight="48dp"
+            android:minWidth="500dp" />
+        <Button
+            android:id="@+id/exit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Выход"
+            android:textSize="18sp"
+            android:textColor="@color/colorText"
+            android:backgroundTint="@color/colorAccent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:minHeight="48dp"
+            android:minWidth="500dp" />
+    </TableLayout>
+
+</LinearLayout>
+
+

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">App_App</string>
+    <string name="balance_btn">Баланс</string>
+    <string name="exit_btn">Выход</string>
+    <string name="date_colon">Дата</string>
+    <string name="incomeInput">Доход:</string>
+    <string name="expenseNameInput">Статья:</string>
+    <string name="expenseInput">Расход:</string>
+    <string name="tableLayout">*</string>
+    <string name="show_table_btn">Баланс</string>
+</resources>
