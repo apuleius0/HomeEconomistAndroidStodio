@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Existing menu items -->
+
+    <item
+        android:id="@+id/nav_date"
+        android:icon="@android:drawable/ic_menu_today"
+        android:title="Дата"/>
+
+    <item
+        android:id="@+id/nav_download"
+        android:icon="@android:drawable/ic_menu_save"
+        android:title="Скачать"/>
+
+    <item
+        android:id="@+id/nav_languages"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="Языки"/>
+
+</menu>
+

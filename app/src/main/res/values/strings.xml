@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">App_App</string>
+    <string name="app_name">HomeEconomistModel</string>
     <string name="balance_btn">Баланс</string>
     <string name="exit_btn">Выход</string>
     <string name="date_colon">Дата</string>
@@ -8,4 +8,12 @@
     <string name="expenseInput">Расход:</string>
     <string name="tableLayout">*</string>
     <string name="show_table_btn">Баланс</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="action_date">Date Action</string>
+    <string name="action_language">Language Action</string>
+    <string name="action_download">Download Action</string>
+
+
+
 </resources>

@@ -1,18 +1,14 @@
 package com.alexey.homeactivitymodel;
 
+public class MainActivity1 {
+    /*
+    package com.alexey.homeactivitymodel;
+
 import android.app.AlertDialog;
-import android.app.DownloadManager;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -56,13 +52,9 @@ public class MainActivity extends AppCompatActivity {
     private static final Type TRANSACTIONS_TYPE = new TypeToken<List<Transaction>>() {}.getType();
     private static final Gson GSON = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
 
-    private static final String PREFERENCE_NAME = "com.alexey.homeactivitymodel.PREFERENCE_FILE_KEY";
-    private static final String LANGUAGE_KEY = "com.alexey.homeactivitymodel.LANGUAGE_KEY";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        loadLanguage();
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -163,35 +155,36 @@ public class MainActivity extends AppCompatActivity {
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(MenuItem menuItem) {
-                // Handle navigation view item clicks here.
-                int id = menuItem.getItemId();
-
-                if (id == R.id.nav_date) {
-                    Intent intentDate = new Intent(MainActivity.this, DateActivity.class);
-                    startActivity(intentDate);
-                } else if (id == R.id.nav_languages) {
-                    showLanguageDialog();
-                } else if (id == R.id.nav_download) {
-                    downloadFile();
+            public boolean onNavigationItemSelected(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.nav_date:
+                        Intent intent = new Intent(MainActivity.this, DateActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.nav_download:
+                        // Handle download action
+                        break;
+                    case R.id.nav_languages:
+                        // Handle languages action
+                        break;
                 }
 
-                // Close the navigation drawer when an item is selected.
-                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-                drawer.closeDrawer(GravityCompat.START);
+                mDrawerLayout.closeDrawer(GravityCompat.START);
                 return true;
             }
         });
 
     }
+
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (mToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void updateCurrentBalance() {
@@ -237,58 +230,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void calculateCurrentBalance() {
+        mCurrentBalance = 0;
         for (Transaction transaction : mTransactions) {
             mCurrentBalance += transaction.getIncome() - transaction.getExpense();
         }
     }
+}
 
-    private void downloadFile() {
-        DownloadManager.Request request = new DownloadManager.Request(Uri.parse("https://example.com/myfile.json"));
-        request.setDescription("Downloading file...");
-        request.setTitle("File Download");
-        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "myfile.json");
-        DownloadManager manager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-        manager.enqueue(request);
-    }
-
-    private void loadLanguage() {
-        SharedPreferences sharedPref = this.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        String languageToLoad = sharedPref.getString(LANGUAGE_KEY, "en");
-        Locale locale = new Locale(languageToLoad);
-        Locale.setDefault(locale);
-        android.content.res.Configuration config = new android.content.res.Configuration();
-        config.setLocale(locale);
-        Context context = createConfigurationContext(config);
-        Resources resources = context.getResources();
-    }
-
-
-    private void saveLanguage(String languageToSave) {
-        SharedPreferences sharedPref = this.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString(LANGUAGE_KEY, languageToSave);
-        editor.apply();
-    }
-
-    private void showLanguageDialog() {
-        final String[] languages = {"English", "Русский"};
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Choose Language");
-        builder.setSingleChoiceItems(languages, 0, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                switch (which) {
-                    case 0:
-                        saveLanguage("en");
-                        break;
-                    case 1:
-                        saveLanguage("ru");
-                        break;
-                }
-                loadLanguage();
-                dialog.dismiss();
-            }
-        });
-        builder.create().show();
-    }
+     */
 }
